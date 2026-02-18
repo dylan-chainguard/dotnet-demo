@@ -1,6 +1,22 @@
 # Dotnet Demo
 
 A simple single-page blog application built with ASP.NET Core MVC that allows you to create, read, update, and delete blog posts. All posts are stored in-memory for demonstration purposes.
+
+## Authenticate with `chainctl`
+
+[see `chainctl` getting started docs](https://edu.chainguard.dev/chainguard/chainctl-usage/getting-started-with-chainctl/)
+
+TL;DR, run:
+```
+chainctl auth login
+
+# to create and use a pull token in another environment
+chainctl auth pull-token
+
+# for local docker use, configure a Docker credential helper:
+chainctl auth configure-docker
+```
+
 ## Running with Docker
 
 Build and run using the standard Microsoft .NET images:
@@ -21,9 +37,7 @@ docker run -p 8080:8080 blogapp:cg
 
 ## Migrating to Chainguard
 
-Switching to Chainguard images is simple and provides enhanced security with minimal, distroless containers.
-
-For reference, see this guide for details on [migrating to chainguard containers](https://edu.chainguard.dev/downloads/migrating-to-chainguard-images.pdf).
+For more details on migration, see thie guide: [Migrating to Chainguard Containers](https://edu.chainguard.dev/downloads/migrating-to-chainguard-images.pdf).
 
 This dotnet example covers a few of the key differences:
 
