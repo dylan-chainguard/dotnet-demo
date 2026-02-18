@@ -20,7 +20,7 @@ RUN dotnet publish -c Release -o /app/publish
 USER nonroot
 
 # Runtime stage
-FROM cgr.dev/your-registry.com/aspnet-runtime:8-dev AS runtime
+FROM cgr.dev/your-registry.com/aspnet-runtime:8 AS runtime
 WORKDIR /app
 
 # Copy published app from build stage
