@@ -1,6 +1,4 @@
-# Dotnet Demo
-
-A simple single-page blog application built with ASP.NET Core MVC that allows you to create, read, update, and delete blog posts. All posts are stored in-memory for demonstration purposes.
+# ASP.NET Demo
 
 ## Authenticate with `chainctl`
 
