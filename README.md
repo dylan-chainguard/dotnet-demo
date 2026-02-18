@@ -1,48 +1,26 @@
-# BlogApp - ASP.NET Core Demo
+# Dotnet Demo
 
 A simple single-page blog application built with ASP.NET Core MVC that allows you to create, read, update, and delete blog posts. All posts are stored in-memory for demonstration purposes.
-
-## Features
-
-- Create new blog posts
-- View all blog posts
-- Edit existing posts
-- Delete posts
-- Responsive, clean UI
-- In-memory storage (no database required)
-
 ## Running with Docker
 
-### Build the Docker image
+Build and run using the standard Microsoft .NET images:
 
 ```bash
 docker build -t blogapp .
-```
-
-### Run the container
-
-```bash
 docker run -p 8080:8080 blogapp
 ```
 
-The application will be available at `http://localhost:8080`
+Build and run using the Chainguard images:
 
-## Project Structure
-
-- `Program.cs` - Application entry point and configuration
-- `Models/BlogPost.cs` - Blog post data model
-- `Services/BlogPostService.cs` - In-memory storage service
-- `Controllers/BlogController.cs` - Handles HTTP requests
-- `Views/Blog/Index.cshtml` - Main UI page
-- `wwwroot/css/site.css` - Styling
-- `Dockerfile` - Multistage Docker build configuration
-
-## Development
-
-If you have .NET 8.0 SDK installed locally:
+If you are running this yourself, first update the registry url on lines 2 and 23 in Dockerfile.cg to match your organization's url.
 
 ```bash
-dotnet run
+docker build -t blogapp:cg -f Dockerfile.cg .
+docker run -p 8080:8080 blogapp:cg
 ```
 
-Then navigate to `https://localhost:5001` or `http://localhost:5000`
+### Migrating to Chainguard
+
+Switching to Chainguard images is simple and provides enhanced security with minimal, distroless containers.
+
+<pre> ```diff - const greeting = "Hello world"; + const greeting = "Hello, world!"; ``` </pre>
